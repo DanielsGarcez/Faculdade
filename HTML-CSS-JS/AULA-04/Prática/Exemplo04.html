@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 4 - JS</title>
+    <script>
+        "use strict";
+        const B = 15;
+        console.log("Constante: " + B);
+        //B=25; Constante não pode ser alterada
+
+        //var = uma variavel global que funciona de qualquer forma
+        console.log("Exemplo com var");
+        for(var i = 0; i < 5; i++)//i = i + 1
+        {
+            console.log("Dentro do for: " + i);
+        }
+        console.log("Fora do fort: " + i);
+
+        //let = uma variavel local que só funciona dentro de um bloco
+        for(let j = 0; i < 5; j++)//i = i + 1
+        {
+            console.log("Dentro do for: " + j);
+            var teste1 = 20;
+            let teste2 = 10;
+        }
+        console.log("Fora do fort: " + j);
+        console.log("var: " + teste1 + "let: " + teste2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

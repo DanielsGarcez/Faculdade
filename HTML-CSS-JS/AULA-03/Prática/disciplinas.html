@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!--Inicio do Documento HTML-->
+<html lang="pt-br"> 
+
+<!--Cabeçalho do documento-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro Exemplo</title>
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <style>
+        table{
+            /* Alinhamento do Texto */
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Formatação para Limites Diferentes*/
+        td,th{
+            border: 1px solid rgb(0, 0, 75);
+            padding: 5px;
+            
+        }
+
+    </style>
+
+    <!-- Minhas Aplicações-->
+    <link rel="shortcut icon" href="favicon/2022-06-29_21-08_logo.png" type="image/x-icon">
+</head>
+
+<!--Conteudo da Página-->
+<body>
+    <section id="principal">
+        <!--Area de Navegação da Página-->
+        <nav>
+            <!--Lista não ordenada-->
+            <ul>
+                <!--Item da Lista-->
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="disciplinas.html">Disciplinas</a>
+                </li>
+                <li>
+                    <a href="contato.html">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Area com Conteúdo Principal-->
+        <article>
+            <!--Cria Tabela-->
+            <table>
+                <!--Cabeçalho da Tabela--> 
+                <thead>
+                    <!--Cria Linha da Tanela--> 
+                    <tr>
+                        <!--Cria coluna da Tanela--> 
+                        <th>Disciplinas</th>
+                        <th>Dia da Semana</th>
+                    </tr>
+                </thead>
+                <!--Corpo da Tabela-->
+                <tbody>
+                    <tr>
+                        <td>Programação Web</td>
+                        <td>Segunda-feira</td>
+                    </tr>
+                    <tr>
+                        <td>Engenharia de Software</td>
+                        <td>Terça-feira</td>
+                    </tr>
+                    <tr>
+                        <td>Sistemas Operacionais</td>
+                        <td>Quarta-feira</td>
+                    </tr>
+                    <tr>
+                        <td>TDA</td>
+                        <td>Quinta-feira</td>
+                    </tr>
+                </tbody>
+                <!--Rodapé da Tabela-->
+                <tfoot>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>4</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </article>
+
+        <!--Rodapé da Página-->
+        <footer>
+            <h3>Campi:</h3>
+            <!--Lista não ordenada-->
+            <ol>
+                <li>São Miguel Paulista</li>
+                <li>Anália Franco</li>
+                <li>Liberdade</li>
+                <li>Paulista</li>
+                <li>Santo Amaro</li>
+                <li>Guarulhos</li>
+                <li>Villa Lobos</li> <!--Shift Alt Seta para baixo: Faz uma Cópia da linha atual na linha abaixo-->
+            </ol>
+            <p>Programação Web - 2023 - &copy;</p>
+        </footer>
+    </section>
+</body>
+</html>

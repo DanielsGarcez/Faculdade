@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+main{
+    border-radius: 100px;
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+    padding: 50px;
+    border: 5px solid red;
+    box-shadow: 30px 30px 3px rgba(0, 0, 0, 0.349);
+    background-image: linear-gradient(to bottom, white, lightgrey);
+    text-align: justify;
+}
+
+.classe1{
+    color: white;
+    background-color: red;
+}
+
+.classe2{
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.classe3{
+    color: rgb(0, 255, 0);
+    background-color: black;
+    font-weight: bold;
+    text-decoration:line-through;
+}
+
+.classe4{
+    color:red;
+    font-weight: bold;
+    text-decoration: underline;
+}
+

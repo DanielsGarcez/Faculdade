@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<!--Inicio do Documento HTML-->
+<html lang="pt-br"> 
+
+<!--Cabeçalho do documento-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro Exemplo</title>
+
+    <!--Vincula arquivos em CSS no HTML-->
+    <link rel="stylesheet" href="css/estilo.css">
+
+
+    <!-- Minhas Aplicações-->
+    <link rel="shortcut icon" href="favicon/2022-06-29_21-08_logo.png" type="image/x-icon">
+
+    <!-- Estilo Incorporado-->
+    <style>
+        p{
+            height: 50px;
+        }
+
+        div{
+            background-color: skyblue;
+            width: 350px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-left: 150px;
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<!--Conteudo da Página-->
+<body>
+    <section id="principal">
+        <!--Area de Navegação da Página-->
+        <nav>
+            <!--Lista não ordenada-->
+            <ul>
+                <!--Item da Lista-->
+            
+                <li><a href="index.html">Home</a></li>
+                
+                <li>
+                    <a href="disciplinas.html">Disciplinas</a>
+                </li>
+                <li>
+                    <a href="contato.html">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Area com Conteúdo Principal-->
+        <article>
+            <!--Area com Conteúdo Principal-->
+            <h1>Analise e Desenvolvimento de Sistemas</h1>
+            <h6>Tecnólogo</h6>
+            <!--Paragrafo-->
+            <p>Curso <strong  class="fonte">Superior</strong> em Tecnologia</p>
+            <p>Duração de 2 Anos (<em>4 Semestres</em>) 
+                <br>Disciplina Prática de <mark>Programação Web</mark>
+            </p>
+
+            <!--DIV:Tag de Bloco | SPAN: Tag de Linha-->
+            <div>
+                Conteúdos Relevantesn da área da Computação, com aulas de <span>Sistemas Operacionais</span>, Técnicas de Desenvolvimento de Algoritmos e Engenharia de Software
+            </div>
+
+            <!--TAg Semantica - Indica area da imagem-->
+            <figure>
+                <!--Insere Imagem-->
+                <img src="https://miro.medium.com/v2/resize:fit:1358/1*1Gh0_hx4rVTiAcJKge1KQA.gif" alt="Monkey Wheel">
+                <!--Legenda de Imagem-->
+                <figcaption class="fonte">GIF</figcaption>
+            </figure>
+
+            <p>Exemplo com CSS</p>
+        </article>
+
+        <!--Rodapé da Página-->
+        <footer>
+            <h3>Campi:</h3>
+            <!--Lista não ordenada-->
+            <ol>
+                <li>São Miguel Paulista</li>
+                <li>Anália Franco</li>
+                <li>Liberdade</li>
+                <li>Paulista</li>
+                <li>Santo Amaro</li>
+                <li>Guarulhos</li>
+                <li>Villa Lobos</li> <!--Shift Alt Seta para baixo: Faz uma Cópia da linha atual na linha abaixo-->
+
+                <!-- &nbsp cria um espaçamento de texto -->
+            </ol>
+            <p>Programação Web - 2023 - &copy;</p>
+        </footer>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 02 - Vetor com entrada de dados</title>
+    <meta charset="UTF-8">
+    <script>
+        "use strict";
+        let numeros=[];
+        let resp,soma = 0, media, qtde = 0;
+        //soma = acumulador
+        //qtde = contador
+
+        //entrada de dados
+        do{
+            numeros[qtde] = Number(prompt("Digite um valor: "));
+            qtde++;
+            resp = prompt("Deseja continuar? (S/N)");
+        }while(resp=='s');
+        //percorrer o vetor para somar os valores
+        for (let i=0; i < numeros.length; i++){
+            soma = soma + numeros[i];
+        }
+        //média dos valores do vetor
+        media = soma / numeros.length;
+        console.log(numeros);
+        console.log("Média: "+media);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

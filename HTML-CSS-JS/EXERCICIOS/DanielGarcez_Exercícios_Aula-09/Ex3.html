@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Alunos</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Registro de Alunos</h1>
+  
+  <form id="alunoForm">
+    <input type="text" id="nome">
+    <input type="number" id="notaExercicios">
+    <input type="number" id="notaProjeto">
+    <input type="number" id="notaRegimental">
+    <button type="button" onclick="cadastrarAluno()">Cadastrar</button>
+    <button type="button" onclick="exibirDados()">Exibir Dados</button>
+  </form>
+  
+  <table id="tabelaAlunos">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>RGM</th>
+        <th>Nota Parcial</th>
+        <th>Nota Exercícios</th>
+        <th>Nota Projeto</th>
+        <th>Nota Regimental</th>
+        <th>Nota Final</th>
+        <th>Conceito</th>
+      </tr>
+    </thead>
+    <tbody id="dadosAlunos">
+      <!-- Os dados dos alunos serão inseridos aqui dinamicamente -->
+    </tbody>
+  </table>
+
+  <script src="script03.js"></script>
+</body>
+</html>

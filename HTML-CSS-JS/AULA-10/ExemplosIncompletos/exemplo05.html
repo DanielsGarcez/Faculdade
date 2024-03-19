@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 05 - Métodos de vetor</title>
+    <meta charset="UTF-8">
+    <script>
+    "use strict";
+    window.addEventListener("load",function(){
+        let meses = ["JAN", "FEV", "MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"];
+        let nro = [3,5,8,1,0];
+        
+        let campo = document.querySelector("#res");
+        let mes;
+        for(mes of meses){
+            campo.innerHTML += mes + "<br>";
+        }
+
+
+        //---------FUNÇÕES DE VETOR---------
+
+        //ordena os valores
+        let ordem = nro.sort();
+        campo.innerHTML += "<strong>Vetor Ordenado: <br><strong>";
+        for(let v of ordem){
+            campo.innerHTML += v + "<br>";
+        }
+
+        //reverte os valores do vetor
+        let r = meses.reverse();
+        campo.innerHTML += "<strong>Vetor Invertido: <br><strong>";
+        for(mes of r){
+            campo.innerHTML += mes + "<br>";
+        }
+
+        //junta vetores
+        let c = meses.concat(nro);
+        campo.innerHTML += "<strong>Vetores Juntos: <br><strong>";
+        for(let v of c){
+            campo.innerHTML += v + "<br>";
+        }
+    }); 
+    </script>
+</head>
+<body>
+    <article id="res"></article>
+</body>
+</html>

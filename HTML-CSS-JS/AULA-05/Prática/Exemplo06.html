@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 06 - Aula 05</title>
+    <script>
+        "use strict";
+        let data,hora,tempo;
+        //cria um objeto do tipo date
+        data = new Date();
+        hora = data.getHours();
+        tempo = "chuvoso";
+
+        //condicional composto
+        if (hora < 12){ //bloco verdadeiro
+            alert("Bom Dia!");
+            if (tempo =="chuvoso"){
+                alert("Não esquece o guarda-chuva")
+            }
+        }
+        else{ //bloco falso
+            if (hora < 18){
+                alert("Boa Tarde!");
+            }
+            else{
+                alert("Boa Noite!");
+            }
+        }
+        alert("fim")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.meunome{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50pt;
+    background-color: black;
+    border-radius: 500px;
+    color: white;
+    text-align: center;
+}

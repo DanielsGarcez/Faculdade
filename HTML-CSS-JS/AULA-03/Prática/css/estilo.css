@@ -1,0 +1,94 @@
+/* Estilos em CSS Externo*/
+
+@charset "UTF-8";
+
+body{
+    margin: 10px;
+}
+
+
+/* Formatação para um Elemento HTML*/
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14pt;
+    color: rgb(0, 0, 75);
+}
+
+
+/* Formatação para qualquer elemento - Classe Generica*/
+/* "." + "NomeDaClasse" */
+.fonte{
+    color: darkred;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/*Estilo Individual - aplicado uma Unica Vez*/
+/* "#" + "NomeDoID"*/
+#principal{
+    margin: auto;
+    width: 700px;
+    border: 2px solid rgb(0, 0, 75);
+    padding: 10px;
+}
+picture{
+    margin: auto;
+}
+img{
+    width: 90vh;
+    
+}
+footer{
+    background-color: rgb(0, 0, 75);
+    color: white;
+    padding: 15px;
+}
+
+
+/* Hierarquia Direta*/
+footer p{
+    color: cadetblue;
+
+}
+
+ul{
+    padding: 0px;
+}
+
+/*Hierarquia Indireta*/
+nav > ul > li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgb(0, 0, 75);
+    border: 2px solid rgb(0, 0, 75);
+    border-radius: 7px;
+}
+
+nav > ul > li:hover{
+    background-color: lightblue;
+    border: 2px solid rgb(0, 0, 75);
+}
+
+nav{
+    text-align: center;
+}
+
+/* Pseudo-Classes - Classes de Formatação */
+/* Link - Pseudo-Classe com Formatação do Link*/
+a:link{
+    color: white;
+    font-family: "Tahoma";
+    font-weight: bold;
+    font-size: 14pt;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/* Visited - Pseudo-Classe com Formatação do Link Visitado */
+a:visited{
+    color: white;
+}
+

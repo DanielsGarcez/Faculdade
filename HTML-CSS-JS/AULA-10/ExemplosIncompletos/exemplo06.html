@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 06 - map e forEach</title>
+    <meta charset="UTF-8">
+    <script>
+        "use strict";
+        window.addEventListener("load",
+        function(){
+            let area = document.querySelector("#res"); //   Encontra o #res dentro dp HTML
+            let paises = ["Mexico", "Brasil", "Itália", "Chile", "Argentina"]; //   Vetor com os itens definidos
+            let resul = paises.map((item) => {  // Cria outro vetor(resul) com as "modificações" em cada item presente no vetor "paises"
+                return item.length //   Retorna a quantidade de caracteres de cada item do vetor "paises"
+            });
+            area.innerHTML += paises; //    Print Vetor "paises"
+            area.innerHTML += "<br>" + resul;//    Print Vetor "resul"
+            area.innerHTML += "<hr>";
+
+            paises.forEach((item, index) => { //    item = acessa o item do vetor ||    index: acessa o indice do item do vetor
+                area.innerHTML += `Pais: ${item} - Indice ${index} <br>`;
+            });
+        }
+        );
+    </script>
+</head>
+
+<body>
+    <article id="res"></article>
+</body>
+</html>

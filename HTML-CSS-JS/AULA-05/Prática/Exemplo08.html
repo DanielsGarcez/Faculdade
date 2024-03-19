@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 08 - Aula 05</title>
+    <script>
+        "use strict";
+        let data,semana;
+        data = new Date();
+        
+        // obtem o dia da semana
+        semana = data.getDay();
+
+        // comparação
+        switch(semana){
+            case 0:
+                alert("Domingo")
+                break;
+            case 1:
+                alert("Segunda-feira");
+                break;
+            case 6:
+                alert("Sábado");
+                break;
+            default:
+                alert("Semana longa");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

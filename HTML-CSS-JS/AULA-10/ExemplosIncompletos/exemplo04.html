@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 04 - for..of</title>
+    <meta charset="UTF-8">
+    <script>
+    "use strict";
+    window.addEventListener("load",function(){
+        let meses = ["JAN", "FEV", "MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"];
+        let campo = document.querySelector("#res");
+        let mes;
+        for(mes of meses){
+            campo.innerHTML += mes + "<br>";
+        }
+    });
+    </script>
+</head>
+<body>
+    <article id="res"></article>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 2</title>
+</head>
+<body>
+    <h1>Quiz sobre Programação Orientada a Objetos</h1>
+    <form id="quizForm">
+        <label for="pergunta1">Pergunta 1: O que é encapsulamento na programação orientada a objetos?</label><br>
+        <input type="radio" name="pergunta1" value="a"> a) Um mecanismo para acelerar a busca de dados<br>
+        <input type="radio" name="pergunta1" value="b"> b) Ocultação de informações<br>
+        <input type="radio" name="pergunta1" value="c"> c) Uma tabela em um banco de dados<br><br>
+        
+        <label for="pergunta2">Pergunta 2: Qual é o princípio da herança?</label><br>
+        <input type="radio" name="pergunta2" value="a"> a) Reutilização de código<br>
+        <input type="radio" name="pergunta2" value="b"> b) Controle de acesso a dados<br>
+        <input type="radio" name="pergunta2" value="c"> c) Controle de transações<br><br>
+        
+        <label for="pergunta3">Pergunta 3: Explique o conceito de polimorfismo.</label><br>
+        <input type="radio" name="pergunta3" value="a"> a) Ocultação de informações<br>
+        <input type="radio" name="pergunta3" value="b"> b) Reutilização de código<br>
+        <input type="radio" name="pergunta3" value="c"> c) Ocultação de informaçõesCapacidade de um objeto assumir várias formas<br><br>
+        
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var respostas = {
+                pergunta1: document.querySelector('input[name="pergunta1"]:checked').value,
+                pergunta2: document.querySelector('input[name="pergunta2"]:checked').value,
+                pergunta3: document.querySelector('input[name="pergunta3"]:checked').value
+            };
+
+            var pontuacao = 0;
+
+            if (respostas.pergunta1 === "b") {
+                pontuacao++;
+            } else {
+                document.getElementById("resposta1").innerText = "A Questão 1 está incorreta! \nA resposta correta é b) Ocultação de informações";
+            }
+
+            if (respostas.pergunta2 === "a") {
+                pontuacao++;
+            } else {
+                document.getElementById("resposta2").innerText = "A Questão 2 está incorreta! \nA resposta correta é a) Reutilização de código";
+            }
+
+            if (respostas.pergunta3 === "c") {
+                pontuacao++;
+            } else {
+                document.getElementById("resposta3").innerText = "A Questão 3 está incorreta! \nA resposta correta é a) Capacidade de um objeto assumir várias formas";
+            }
+
+            var resultado = "Você acertou " + pontuacao + " de 3 perguntas.";
+            document.getElementById("resultado").innerText = resultado;
+        });
+    </script>
+    <p id="resposta1"></p>
+    <p id="resposta2"></p>
+    <p id="resposta3"></p>
+</body>
+</html>

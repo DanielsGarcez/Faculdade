@@ -1,13 +1,17 @@
-//By Ledón
+//By Ledón 
 package pckcompras;
 
 class Queue implements TAD_Queue {
-
+//Nesta versão da classe Queue adicionamos o atributo count e os métodos
+//size() e toArray()
+    
     private Node head = null, tail = null;
+    private int count = 0;
 
     public Queue() {
         head = null;
         tail = null;
+        count = 0;
     }
 
     public Object enqueue(Object x) {
@@ -26,8 +30,9 @@ class Queue implements TAD_Queue {
                 tail.setNext(novo);
                 tail = novo;
             }
+            count++;
             return x;
-        } catch (Exception ex) { //qualquer outro caso de erro
+        } catch (Exception ex) {
             return null;
         }
     }
@@ -41,6 +46,7 @@ class Queue implements TAD_Queue {
         if (head == null) {
             tail = null;
         }
+        count--;
         return value;
     }
 
@@ -78,7 +84,7 @@ class Queue implements TAD_Queue {
         }
     }
     
-    public String toString2() { //retorna o conteúdo da fila dinâmica
+        public String toString2() { //retorna o conteúdo da fila dinâmica
         if (!isEmpty()) {
             String saida = "";
             Node aux = head;
@@ -86,13 +92,30 @@ class Queue implements TAD_Queue {
                 saida += aux.getValue().toString();  // ou separar os objetos com \n
                 aux = aux.getNext();
                 if (aux != null) {
-                    saida += "\n "; // ver comentário anterior
+                    saida += "\n"; // ver comentário anterior
                 }
             }
-            return ("f: [ " + saida + " ]");
+            return ("\n"+saida + "\n");
         } else {
-            return ("f: [ ]"); // fila vazia
+            return ("\n"); // fila vazia
         }
     }
     
+    public int size() { //retorna a quantidade de objetos na fila
+        //count: atributo que incrementamos em enqueue e decrementamos em dequeue
+        return count;  
+    }
+    
+    public Object[] toArray() {
+    //retorna um vetor com os objetos guardados na fila, o que poderá
+    //ser útil para ordenar dados ou processamento em geral
+      if(isEmpty())return null; //operação impossível se a fila estiver vazia
+      Object vet[] = new Object[count];
+      Node aux = head;
+      for(int i=0; i<count; i++) {
+          vet[i] = aux.getValue();
+          aux = aux.getNext();
+      }
+      return vet;
+    }
 }

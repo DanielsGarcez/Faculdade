@@ -107,9 +107,9 @@ class Pilha implements TAD_Pilha {  //a classe Pilha implementa o TAD_Pilha
                 resp = aux.getValue().toString() + "\n" + resp;
                 aux = aux.getNext();
             }
-            return ("p: [\n" + resp + "]");
+            return (resp + "\n");
         } else {
-            return ("p: [ ]");
+            return ("");
         }
     }
 

@@ -45,8 +45,7 @@ public class Compra {
 
     @Override
     public String toString() {
-        return "Compra{" + "nomeComprador=" + nomeComprador + ", nomeProduto=" + nomeProduto + ", valorProduto=" + valorProduto + '}';
+        return "Comprador: " + nomeComprador + ", Produto: " + nomeProduto + ", Valor: R$" + valorProduto + ".";
     }
-    
     
 }

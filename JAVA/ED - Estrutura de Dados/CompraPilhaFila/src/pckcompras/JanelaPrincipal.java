@@ -4,6 +4,8 @@
  */
 package pckcompras;
 
+import java.awt.TextArea;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -67,10 +69,25 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         jButton2.setText("Cancelar Última Compra");
         jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Mostrar Pilha");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Transferir para Fila");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Mostrar Fila");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +97,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         });
 
         jButton6.setText("Atender");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Sobre");
         jButton7.setToolTipText("");
@@ -167,15 +189,22 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+            // BOTÃO MOSTRAR FILA
+            if (!fila.isEmpty()){
+                jTextArea1.setText(fila.toString2());
+            } else{
+                JOptionPane.showMessageDialog(this, "A fila está vazia!");
+                jTextArea1.setText("");
+            }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // BOTÃO GUARDAR
+        try{
         String nomeComprador,nomeProduto;
         float valorProduto;
         
@@ -192,6 +221,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jTextField3.setText("");
         jTextField1.requestFocus();
         jTextArea1.setText(pilha.toString2());
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Certifique-se que todos valores estão preenchidos ou são válidos.");
+        }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -200,8 +234,80 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         sob.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // BOTÃO ATENDER
+        
+        if(!fila.isEmpty()){
+            Compra tr = (Compra) fila.dequeue();
+            System.out.println("Dados: "+tr.toString());
+            jTextArea1.setText("Compra atendida: "+tr.toString());
+            
+            JOptionPane.showMessageDialog(this, "Compra atendida com sucesso!");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "A fila está vazia!");
+            jTextArea1.setText("");
+        }
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // BOTÃO MOSTRAR PILHA
+        if (!pilha.isEmpty()){
+            jTextArea1.setText(pilha.toString2());
+        } else{
+            JOptionPane.showMessageDialog(this, "A pilha está vazia!");
+            jTextArea1.setText("");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // BOTÃO CANCELAR ULTIMA COMPRA
+        
+        if (!pilha.isEmpty()){
+            Compra tr = (Compra) pilha.pop();
+            System.out.println("Dados: "+tr.toString());
+            jTextArea1.setText("Compra Cancelada: "+tr.toString());
+            
+            JOptionPane.showMessageDialog(this, "Compra cancelada com sucesso!");
+        } else{
+            JOptionPane.showMessageDialog(this, "A pilha está vazia!");
+            jTextArea1.setText("");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // BOTÃO TRANSFERIR PARA FILA
+        Pilha pilhaAux = new Pilha();
+        
+        if (!pilha.isEmpty()){
+            while(!pilha.isEmpty()) {
+                System.out.println("Conteúdo da Pilha: \n"+pilha.toString2());
+                Compra x = (Compra) pilha.pop(); // Remove um elemento da pilha
+                pilhaAux.push(x); // Adiciona o elemento à fila
+                System.out.println("Conteúdo da pilha Auxiliar: \n"+pilhaAux.toString2());
+            }
+            //Caso pilhaAux tenha dados
+            if(!pilhaAux.isEmpty()){
+                while(!pilhaAux.isEmpty()){
+                    Compra y = (Compra) pilhaAux.pop();
+                    fila.enqueue(y);
+                    System.out.println("Conteúdo da Fila: \n"+fila.toString2());
+                }
+            }
+            jTextField1.requestFocus();
+            JOptionPane.showMessageDialog(this, "Transferido!");
+            jTextArea1.setText("Conteúdo da Fila: \n"+fila.toString2());
+        } else {
+            JOptionPane.showMessageDialog(this, "A pilha está vazia!");
+            jTextArea1.setText("");
+        }
+
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
-     * @param args the command line arguments
+     * @param args the command line arguments                                                    
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

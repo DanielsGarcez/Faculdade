@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Media de Notas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Média de Notas</h1>
+        <form method="post" action="salvar_notas.jsp">
+            <p>
+                <label for="codigo">Nome do Aluno:</label>
+                <input type="text" name="codigo" id="codigo">
+            </p>
+            <p>
+                <label for="nome">Nome do Aluno:</label>
+                <input type="text" name="nome" id="nome" maxlength="50">
+            </p>
+            <p>
+                <label for="nota1">Primeira nota:</label>
+                <input type="text" name="nota1" id="nota1">
+            </p>
+            <p>
+                <label for="nota2">Segunda nota:</label>
+                <input type="text" name="nota2" id="nota2">
+            </p>
+            
+            <p>
+                <input type="submit" value="Calcular Média">
+            </p>
+             
+        </form>
+    </body>
+</html>
